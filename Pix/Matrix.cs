@@ -8,11 +8,15 @@ namespace Pix
 {
     public class Matrix<T>
     {
+        public int Width { get; private set; }
+        public int Height { get; private set; }
         protected T[,] _data;
 
         public Matrix(int width, int height)
         {
             _data = new T[width, height];
+            Width = width;
+            Height = height;
         }
 
         public T GetElement(int x, int y)
