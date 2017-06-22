@@ -7,5 +7,6 @@ namespace Pix
         Point Position { get; set; }
         int Width { get; set; }
         int Height { get; set; }
+        (Point, Color)[] GetDrawList();
     }
 }
