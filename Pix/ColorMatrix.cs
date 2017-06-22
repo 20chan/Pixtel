@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace Pix
@@ -18,7 +20,14 @@ namespace Pix
 
         public (Point, Color)[] GetDrawList()
         {
-            throw new NotImplementedException();
+            return GetDrawListLazy().ToArray();
+        }
+
+        private IEnumerable<(Point, Color)> GetDrawListLazy()
+        {
+            for (int x = 0; x < Width; x++)
+                for (int y = 0; y < Height; y++)
+                    yield return (new Point(x, y), Bitmap.GetPixel(x, y));
         }
     }
 }

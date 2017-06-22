@@ -56,7 +56,7 @@ namespace Pixtel
                 bitmapimage.EndInit();
             }
 
-            
+            this.DrawArea.Image = bitmapimage;
         }
     }
 }
